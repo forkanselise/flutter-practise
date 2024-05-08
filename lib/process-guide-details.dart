@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 class DetailsTab extends StatefulWidget {
   @override
@@ -17,30 +18,53 @@ class _DetailsTab extends State<DetailsTab> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left:24.0, right: 24, top: 24),
-            child: Text("Sub Title", style: TextStyle(fontWeight: FontWeight.bold),),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left:24.0, right: 24, top: 24),
-            child: Row(
-              children: [
-                Text("Due Date 1 may 2024", style: TextStyle(),),
-                SizedBox(width: 15,),
-                Container(
-                 height: 20,
-                 width: 1,
-                 color: Color.fromARGB(255, 139, 138, 138),
-                ),
-                SizedBox(width: 15,),
-                Text("Create Date 1 may 2024", style: TextStyle(),),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left:24.0, right: 24, top: 24),
+                    child: Text("Sub Title", style: TextStyle(fontWeight: FontWeight.bold),),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left:24.0, right: 24, top: 24),
+                    child: Row(
+                      children: [
+                        Text("Due Date 1 may 2024", style: TextStyle(),),
+                        SizedBox(width: 15,),
+                        Container(
+                        height: 20,
+                        width: 1,
+                        color: Color.fromARGB(255, 139, 138, 138),
+                        ),
+                        SizedBox(width: 15,),
+                        Text("Create Date 1 may 2024", style: TextStyle(),),
+                                
+                                
                         
-                        
-                
-                        
-                        
-              ],
-            ),
+                                
+                                
+                      ],
+                    ),
+                  ),
+                  
+                ],
+              ),
+              // SizedBox(width: 150,),
+              Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: CircularPercentIndicator(
+                        radius: 30.0,
+                        lineWidth: 5.0,
+                        percent: 0.1,
+                        center: new Text("10%"),
+                        progressColor: Colors.green,
+                      ),
+              )
+            ],
           ),
       
           // VerticalDivider(),
@@ -150,6 +174,12 @@ class MyDetailsView extends StatelessWidget {
                       
                       Tab( child: Text("Tasks", style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),),
                     ],
+                    
+                    labelColor: Color(0xFF155D4A),
+                    // unselectedLabelColor: Colors.white,
+                    indicatorSize: TabBarIndicatorSize.tab,
+                    indicatorColor: Color(0xFF155D4A),
+                    indicatorWeight: 3,
                   ),
                   Expanded(child: TabBarView(
                     children: [
@@ -166,7 +196,7 @@ class MyDetailsView extends StatelessWidget {
                       child: Center(child: Text("Add Details", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),)),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        color: Color.fromARGB(255, 0, 136, 34)
+                        color: Color(0xFF155D4A),
                       ),
                     ),
                   )

@@ -111,12 +111,19 @@ import 'package:riqs_ui/process-guide-details.dart';
 
 class MyListView extends StatefulWidget {
   const MyListView({Key? key}) : super(key: key);
+  // final Function(bool) toggleFlag;
+
+  // MyListView({required this.toggleFlag});
+
+  
 
   @override
   _MyListViewState createState() => _MyListViewState();
 }
 
 class _MyListViewState extends State<MyListView> {
+
+  
   bool flag = false;
 
   @override

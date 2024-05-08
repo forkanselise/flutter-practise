@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:riqs_ui/library.dart';
+import 'package:riqs_ui/process-guide-details.dart';
 import 'package:riqs_ui/process-guide-list.dart';
 
 
@@ -50,13 +52,20 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  // Widget.build(BuildContext context) {
+  //   return MyHomePage(toggleFlag: toggleFlag);
+  // }
+
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
+  static  List<Widget> _widgetOptions = <Widget>[
     Library(),
     // Library(),
 
     MyListView(),
+
+    // DetailsTab(),
+    MyDetailsView()
     
     
   ];
@@ -68,6 +77,9 @@ class _MyHomePageState extends State<MyHomePage> {
         appTitle = 'Library';
       } else if (index == 1) {
         appTitle = 'Process Guide';
+      }
+      else {
+        appTitle = 'Process Guide Details';
       }
     });
   }
@@ -88,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Color(0xFF155D4A),
               ),
               child: Text('Drawer Header'),
             ),
@@ -105,6 +117,15 @@ class _MyHomePageState extends State<MyHomePage> {
               selected: _selectedIndex == 1,
               onTap: () {
                 _onItemTapped(1);
+                Navigator.pop(context);
+              },
+            ),
+
+            ListTile(
+              title: const Text('Process Guide Details'),
+              selected: _selectedIndex == 2,
+              onTap: () {
+                _onItemTapped(2);
                 Navigator.pop(context);
               },
             ),
