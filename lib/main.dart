@@ -89,7 +89,19 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(title: Text(appTitle, style: TextStyle(color: Colors.white,),),
         backgroundColor: Color(0xFF155D4A),
-        
+        actions: [
+          PopupMenuButton(
+            onSelected: (item) {
+              setState(() {
+                print(item);
+              });
+            },
+            itemBuilder: (itemBuilder)=>[
+            PopupMenuItem(child: Text("Item 1"),value: 1,),
+            PopupMenuItem(child: Text("Item 2"), value: 2,),
+            PopupMenuItem(child: Text("Item 3"), value: 3,)
+          ])
+        ],
       ),
       body: Center(
         child: _widgetOptions[_selectedIndex],

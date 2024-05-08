@@ -59,8 +59,10 @@ class _DetailsTab extends State<DetailsTab> {
                 child: CircularPercentIndicator(
                         radius: 30.0,
                         lineWidth: 5.0,
-                        percent: 0.1,
-                        center: new Text("10%"),
+                        percent: 0.7,
+                        animation: true,
+                        animationDuration: 2000,
+                        center: new Text("70%"),
                         progressColor: Colors.green,
                       ),
               )
