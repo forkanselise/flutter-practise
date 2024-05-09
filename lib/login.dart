@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:riqs_ui/main.dart';
 
 class LoginUi extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -15,15 +17,20 @@ class LoginUi extends StatelessWidget {
 
             const SizedBox(height: 20,),
 
-            Container(
-              height: 50,
-              width: 200,
-              child: Center(
-                child: Text('Login', style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold)),
-              ),
-              decoration: const BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.all(Radius.circular(10))
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context , MaterialPageRoute(builder: (context) => MyHomePage()));
+              },
+              child: Container(
+                height: 50,
+                width: 200,
+                child: Center(
+                  child: Text('Login', style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold)),
+                ),
+                decoration: const BoxDecoration(
+                  color: Color(0xFF155D4A),
+                  borderRadius: BorderRadius.all(Radius.circular(10))
+                ),
               ),
             )
 
@@ -56,7 +63,7 @@ class FormField extends StatelessWidget{
         ),
 
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Color.fromARGB(255, 253, 60, 60)),
+          borderSide: const BorderSide(color: Color(0xFF155D4A)),
           borderRadius: BorderRadius.circular(10)
         ),
         enabledBorder: OutlineInputBorder(

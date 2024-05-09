@@ -161,6 +161,15 @@ class MyDetailsView extends StatelessWidget {
         length: 2,
         child:
             Scaffold(
+              appBar: AppBar(
+                backgroundColor: Color(0xFF155D4A),
+                leading: IconButton(
+                  icon: Icon(Icons.arrow_back, color: Colors.white),
+                  onPressed: () => Navigator.of(context).pop(),
+                ), 
+                title: Text("Process Guide Details", style: TextStyle(color: Colors.white),),
+
+              ),
               body: Column(
                 children: [
                   TabBar(

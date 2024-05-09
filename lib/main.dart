@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:riqs_ui/library.dart';
+import 'package:riqs_ui/login.dart';
 import 'package:riqs_ui/process-guide-details.dart';
 import 'package:riqs_ui/process-guide-list.dart';
 
@@ -14,10 +15,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       // title: appTitle,
-      home: MyHomePage(),
+      // home: MyHomePage(),
+      home: LoginUi(),
     );
   }
 }
@@ -58,14 +60,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static  List<Widget> _widgetOptions = <Widget>[
+  static const List<Widget> _widgetOptions = <Widget>[
     Library(),
     // Library(),
 
     MyListView(),
-
-    // DetailsTab(),
-    MyDetailsView()
     
     
   ];
@@ -78,9 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
       } else if (index == 1) {
         appTitle = 'Process Guide';
       }
-      else {
-        appTitle = 'Process Guide Details';
-      }
+      
     });
   }
 
@@ -89,6 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(title: Text(appTitle, style: TextStyle(color: Colors.white,),),
         backgroundColor: Color(0xFF155D4A),
+        iconTheme: IconThemeData(color: Colors.white),
         actions: [
           PopupMenuButton(
             onSelected: (item) {
@@ -133,14 +131,14 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
 
-            ListTile(
-              title: const Text('Process Guide Details'),
-              selected: _selectedIndex == 2,
-              onTap: () {
-                _onItemTapped(2);
-                Navigator.pop(context);
-              },
-            ),
+            // ListTile(
+            //   title: const Text('Process Guide Details'),
+            //   selected: _selectedIndex == 2,
+            //   onTap: () {
+            //     _onItemTapped(2);
+            //     Navigator.pop(context);
+            //   },
+            // ),
             
           ],
         ),

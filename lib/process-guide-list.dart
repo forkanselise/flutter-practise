@@ -136,6 +136,7 @@ class _MyListViewState extends State<MyListView> {
             setState(() {
               flag = !flag; // Toggle the value of flag
             });
+            Navigator.push(context , MaterialPageRoute(builder: (context) => MyDetailsView()));
             print('clicked');
           },
           child: Padding(
